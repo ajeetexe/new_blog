@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap4 %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <style>
+        .banner-area {
+            width: 100%;
+            height: 100vh;
+            background: #FFF;
+        }
+        
+        .content-area {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content {
+            height: 480px;
+            width: 380px;
+            position: relative;
+            margin: 6% auto;
+            padding: 2%;
+            
+        }
+        
+    </style>
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4+PiW+fn5/Pn5+f/5+fn/+fn5//n5+f/5+fn/+fn5//Te4v/03uL/9N7i//Te4v/03uL/9N7i//Tf4v/03+KY+fn5/Pn5+f/5+fn/+fn5//n5+f/5+fn/+fn5//n5+f/03uL/9N7i//Te4v/03uL/9N7i//Te4v/03uL/9N/i//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/9N7i//Te4v/03uL/9N7i//Te4v/03uL/9N7i//Te4v/5+fn/+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5//Te4v/03uL/9N7i//Te4v/03uL/9N7i//Te4v/03uL/+fn5/97UtP+6o1r/xLBy/+nj0P+4oFX/39W3/8e1e/+TfFT/vqiT//Te4v/HsqH/k31W/6SNbf/y3d//9N7i//n5+f/Txpr/3NGw/7+pZv/Zzqn/1Mac/9TGm//b0K7/897h/5uFYP/ZxLv/k3xV//Db3f+ijGz/x7Gh//Te4v/5+fn/08aa/7ymX/+0mkr/4trA/9TGnP/Ov43/5NzE//Te4v+okXP/zrmr/5yGYv/s19f/t6GJ/9/Jw//03uL/+fn5/9fKov+2nVD/xLF0/+Xex//Xy6T/8/Hq/7ymX/+TfFT/ppBw//Te4v+wmoD/k3xV/5+JZ//03uL/9N7i//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/9N7i//Te4v/03uL/9N7i//Te4v/03uL/9N7i//Te4v/5+fn/+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5//Te4v/03uL/9N7i//Te4v/03uL/9N7i//Te4v/03uL/+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5//n5+f/03uL/9N7i//Te4v/03uL/9N7i//Te4v/03uL/9N7i//Xe3f/13t3/9d7d//Xe3f/13t3/9d7d//Xe3f/13t3/8MXF//DFxf/wxcX/8MXF//DFxf/wxcX/8MXF//DFxf/mgX3/5oF9/+aBff/mgX3/5oF9/+aBff/mgX3/5oF9/+JpXv/iaV7/4mle/+JpXv/iaV7/4mle/+JpXv/iaV7/5oF9/9OhoP/Av8H/5YJ9/6K2h//ImIH/1YCg/8WAwf/iaV7/4mle/+JpXv/iaV7/4mle/+JpXv/iaV7/4mle/+aBfPzbk5H/0KWl/+aBff+9oYP/1o1//92Akf/TgKX/4mle/+JpXv/iaV7/4mle/+JpXv/iaV7/4mle/+JpXv/ngX2W5oF8/OaBff/mgX3/5oF9/+aBff/mgX3/5oF9/+JpXv/iaV7/4mle/+JpXv/iaV7/4mle/+JpXv/iaV6YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+        rel="icon" type="image/x-icon" />
+    <title>Blog</title>
+</head>
+<body>
+    <div class="banner-area">
+        <div class="content-area">
+            <div class="content">
+                <form  method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form login_form show_label=False %}
+                    {% bootstrap_button "Log in" button_type="submit" button_class="btn-primary btn-lg btn-block" %}
+                    <a class="text-primary" href="#">Forget Password</a>
+                    <p class="text-secondary">Don't have a account <a href="{% url 'register_request' %}">register here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
